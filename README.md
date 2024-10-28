@@ -1,4 +1,4 @@
-# Pokémon Ruby and Sapphire [![Build Status][travis-badge]][travis]
+# Pokémon Ruby Plus and Sapphire Plus [![Build Status][travis-badge]][travis]
 
 This repository is for the creation of a decompilation hack of Pokemon Ruby and Sapphire.
 Due to the unique nature of both the original Ruby and Sapphire and their development,
