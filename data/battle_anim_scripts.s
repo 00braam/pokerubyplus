@@ -2908,7 +2908,8 @@ Move_BARRAGE: @ 81CB533
 	end
 
 Move_SKY_ATTACK: @ 81CB57B
-	choosetwoturnanim _81CB585, _81CB68E
+	@ choosetwoturnanim _81CB585, _81CB68E
+	goto _81CB68E
 _81CB584:
 	end
 _81CB585:
@@ -7485,7 +7486,8 @@ _81D1DF7:
 	return
 
 Move_RAZOR_WIND: @ 81D1E0B
-	choosetwoturnanim _81D1E16, _81D1E66
+	@ choosetwoturnanim _81D1E16, _81D1E66
+	goto _81D1E66
 _81D1E14:
 	waitforvisualfinish
 	end

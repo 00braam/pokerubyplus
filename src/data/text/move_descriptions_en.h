@@ -47,16 +47,16 @@ static const u8 MoveDescription_Guillotine[] = _(
     "that may cause fainting.");
 
 static const u8 MoveDescription_RazorWind[] = _(
-    "A 2-turn move that strikes\n"
-    "the foe on the 2nd turn.");
+    "Hits foe with sharp gale\n"
+    "that may cause flinch.");
 
 static const u8 MoveDescription_SwordsDance[] = _(
     "A fighting dance that\n"
     "sharply raises ATTACK.");
 
 static const u8 MoveDescription_Cut[] = _(
-    "Cuts the foe with sharp\n"
-    "scythes, claws, etc.");
+    "Uses claws, etc. to cut foe.\n"
+    "High critcal-hit ratio.");
 
 static const u8 MoveDescription_Gust[] = _(
     "Strikes the foe with a gust\n"
@@ -504,7 +504,7 @@ static const u8 MoveDescription_FireBlast[] = _(
 
 static const u8 MoveDescription_Waterfall[] = _(
     "Charges the foe with speed\n"
-    "to climb waterfalls.");
+    "and may cause flinch.");
 
 static const u8 MoveDescription_Clamp[] = _(
     "Traps and squeezes the\n"
@@ -567,8 +567,8 @@ static const u8 MoveDescription_LovelyKiss[] = _(
     "face that induces sleep.");
 
 static const u8 MoveDescription_SkyAttack[] = _(
-    "Searches out weak spots,\n"
-    "then strikes the next turn.");
+    "Uses dominance of sky\n"
+    "to land a strong blow.");
 
 static const u8 MoveDescription_Transform[] = _(
     "Alters the user's cells to\n"
@@ -964,7 +964,7 @@ static const u8 MoveDescription_SunnyDay[] = _(
 
 static const u8 MoveDescription_Crunch[] = _(
     "Crunches with sharp fangs.\n"
-    "May lower SP. DEF.");
+    "May lower DEF.");
 
 static const u8 MoveDescription_MirrorCoat[] = _(
     "Counters the foe's special\n"
