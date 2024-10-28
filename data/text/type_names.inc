@@ -6,7 +6,7 @@ gTypeNames:: @ 81F9870
 	.string "GROUND$", 7
 	.string "ROCK$", 7
 	.string "BUG$", 7
-	.string "GHOST$", 7
+	.string "DARK$", 7
 	.string "STEEL$", 7
 	.string "???$", 7
 	.string "FIRE$", 7
@@ -16,4 +16,4 @@ gTypeNames:: @ 81F9870
 	.string "PSYCHC$", 7
 	.string "ICE$", 7
 	.string "DRAGON$", 7
-	.string "DARK$", 7
+	.string "GHOST$", 7
