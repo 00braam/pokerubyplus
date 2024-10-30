@@ -65,7 +65,7 @@ u16 ConvertDateToDayCount(u8 year, u8 month, u8 day)
 
 #ifndef BUGFIX_BERRY
     // The berry glitch was caused by not adding days for the year 2000.
-    for (i = year - 1; i > 0; i--)
+    for (i = year - 1; i >= 0; i--)
     {
         dayCount += 365;
 

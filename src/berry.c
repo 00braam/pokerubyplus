@@ -1223,6 +1223,8 @@ static bool32 BerryTreeGrow(struct BerryTree *tree)
         tree->stage++;
         break;
     case BERRY_STAGE_BERRIES:
+		// Comment out section below as redundancy to make sure that berry trees don't reset
+		/*
         tree->watered1 = 0;
         tree->watered2 = 0;
         tree->watered3 = 0;
@@ -1231,6 +1233,7 @@ static bool32 BerryTreeGrow(struct BerryTree *tree)
         tree->stage = BERRY_STAGE_SPROUTED;
         if (++tree->regrowthCount == BERRY_REGROW_LIMIT)
             *tree = gBlankBerryTree;
+		*/
         break;
     }
     return TRUE;
@@ -1245,15 +1248,17 @@ void BerryTreeTimeUpdate(s32 minutesPassed)
     {
         tree = &gSaveBlock1.berryTrees[i];
 
-        if (tree->berry != BERRY_NONE && tree->stage != BERRY_STAGE_NO_BERRY && tree->growthSparkle == FALSE)
+		// Update condition so that following function only happens if the tree is not fully grown
+        if (tree->berry != BERRY_NONE && tree->stage != BERRY_STAGE_NO_BERRY && tree->growthSparkle == FALSE && tree->stage != BERRY_STAGE_BERRIES)
         {
             // the player has waited too long to water the berry. Reset the tree. This is because
             // if the berry state is not in the unwatered state, the tree will grow anyway despite this
             // check, which means BerryTreeGrow will handle the regrow process for this, removing the
             // need for this check. This only handles the unwatered soil state.
-            if (minutesPassed >= GetStageDurationByBerryType(tree->berry) * 71)
+			if (minutesPassed >= GetStageDurationByBerryType(tree->berry) * 71)
             {
-                *tree = gBlankBerryTree;
+                // comment out line below to prevent tree from disappearing
+				// *tree = gBlankBerryTree;
             }
             else
             {
