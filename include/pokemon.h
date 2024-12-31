@@ -389,6 +389,7 @@ struct EvolutionData
     struct Evolution evolutions[5];
 };
 
+extern const s8 gNatureStatTable[][5]; // this is added for pokemon_summary_screen.c
 extern u8 gPlayerPartyCount;
 extern struct Pokemon gPlayerParty[PARTY_SIZE];
 extern u8 gEnemyPartyCount;

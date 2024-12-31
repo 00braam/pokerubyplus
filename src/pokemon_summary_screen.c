@@ -2182,6 +2182,7 @@ static void SummaryScreen_PrintPokemonSkills(struct Pokemon *mon)
     u8 i;
     u16 heldItem;
     u8 *buffer;
+	u8 nature; // declaration var to store mon's nature
 
     for (i = 0; i < 5; i++)
         sub_80A1918(i, 1);
@@ -2195,21 +2196,48 @@ static void SummaryScreen_PrintPokemonSkills(struct Pokemon *mon)
     ConvertIntToDecimalString(buffer, GetMonData(mon, MON_DATA_EXP));
     MenuPrint_RightAligned(buffer, 29, 14);
     DrawExperienceProgressBar(mon, 23, 16);
+	
+	nature = GetNature(mon); // retrieved to check for nature stat changes
 
     ConvertIntToDecimalString(buffer, GetMonData(mon, MON_DATA_ATK));
-    MenuPrint_Centered(buffer, 16, 9, 50);
+	if (gNatureStatTable[nature][0] > 0) // checks if + attack nature
+		SummaryScreen_PrintColoredTextCentered(buffer, 14, 16, 9, 50); // red text
+	else if (gNatureStatTable[nature][0] < 0) // else checks for - attack nature
+		SummaryScreen_PrintColoredTextCentered(buffer, 10, 16, 9, 50); // pink text
+	else // means no change to stat from nature
+		MenuPrint_Centered(buffer, 16, 9, 50); // black text
 
     ConvertIntToDecimalString(buffer, GetMonData(mon, MON_DATA_DEF));
-    MenuPrint_Centered(buffer, 16, 11, 50);
+    if (gNatureStatTable[nature][1] > 0)
+		SummaryScreen_PrintColoredTextCentered(buffer, 14, 16, 11, 50);
+	else if (gNatureStatTable[nature][1] < 0)
+		SummaryScreen_PrintColoredTextCentered(buffer, 10, 16, 11, 50);
+	else
+		MenuPrint_Centered(buffer, 16, 11, 50);
 
     ConvertIntToDecimalString(buffer, GetMonData(mon, MON_DATA_SPATK));
-    MenuPrint_Centered(buffer, 27, 7, 18);
+	if (gNatureStatTable[nature][3] > 0)
+		SummaryScreen_PrintColoredTextCentered(buffer, 14, 27, 7, 18);
+	else if (gNatureStatTable[nature][3] < 0)
+		SummaryScreen_PrintColoredTextCentered(buffer, 10, 27, 7, 18);
+	else
+		MenuPrint_Centered(buffer, 27, 7, 18);
 
     ConvertIntToDecimalString(buffer, GetMonData(mon, MON_DATA_SPDEF));
-    MenuPrint_Centered(buffer, 27, 9, 18);
+	if (gNatureStatTable[nature][4] > 0)
+		SummaryScreen_PrintColoredTextCentered(buffer, 14, 27, 9, 18);
+	else if (gNatureStatTable[nature][4] < 0)
+		SummaryScreen_PrintColoredTextCentered(buffer, 10, 27, 9, 18);
+	else
+		MenuPrint_Centered(buffer, 27, 9, 18);
 
     ConvertIntToDecimalString(buffer, GetMonData(mon, MON_DATA_SPEED));
-    MenuPrint_Centered(buffer, 27, 11, 18);
+    if (gNatureStatTable[nature][2] > 0)
+		SummaryScreen_PrintColoredTextCentered(buffer, 14, 27, 11, 18);
+	else if (gNatureStatTable[nature][2] < 0)
+		SummaryScreen_PrintColoredTextCentered(buffer, 10, 27, 11, 18);
+	else
+		MenuPrint_Centered(buffer, 27, 11, 18);
 
     buffer = AlignInt1InMenuWindow(buffer, GetMonData(mon, MON_DATA_HP), 24, 1);
     *buffer++ = CHAR_SLASH;
