@@ -1295,7 +1295,7 @@
       "id": "LAYOUT_RUSTURF_TUNNEL",
       "name": "RusturfTunnel_Layout",
       "width": 36,
-      "height": 24,
+      "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_RusturfTunnel",
       "border_filepath": "data/layouts/RusturfTunnel/border.bin",
@@ -3320,6 +3320,16 @@
       "secondary_tileset": "gTileset_Pacifidlog",
       "border_filepath": "data/layouts/SkyPillar_Top/border.bin",
       "blockdata_filepath": "data/layouts/SkyPillar_Top/map.bin"
+    },
+    {
+      "id": "LAYOUT_RUSTURF_TUNNEL_SOUTH",
+      "name": "RusturfTunnel_South_Layout",
+      "width": 22,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_RusturfTunnel",
+      "border_filepath": "data/layouts/RusturfTunnel_South/border.bin",
+      "blockdata_filepath": "data/layouts/RusturfTunnel_South/map.bin"
     }
   ]
 }
